@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ProductService } from '../services/product/product-service';
 
 
 @Component({
@@ -10,12 +11,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrl: './product-component.css'
 })
 
-export class ProductComponent {
+export class ProductComponent implements OnInit {
 
   products: Product[] = [];
   formGroupProduct: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  //Injeção de dependencia, declarou no constructor pode usar as funcionalidades no código
+  constructor(private formBuilder: FormBuilder, private service: ProductService) {
     this.formGroupProduct = formBuilder.group({
       id: [''],
       name: [''],
@@ -24,10 +26,27 @@ export class ProductComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.service.getAllProducts().subscribe(
+      {
+        next: json => this.products = json
+      }
+    );    
+  }
+
   save() {
-    this.products.push(this.formGroupProduct.value);
-    this.products.length
-    this.formGroupProduct.reset();
+    this.service.save(this.formGroupProduct.value).subscribe(
+      {
+        next: json => {
+          this.products.push(json)
+          this.formGroupProduct.reset
+        }
+      }
+    );
+
+    // this.products.push(this.formGroupProduct.value);
+    // this.products.length
+    // this.formGroupProduct.reset();
   }
 
 }
