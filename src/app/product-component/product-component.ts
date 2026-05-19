@@ -39,7 +39,7 @@ export class ProductComponent implements OnInit {
       {
         next: json => {
           this.products.push(json)
-          this.formGroupProduct.reset
+          this.formGroupProduct.reset();
         }
       }
     );

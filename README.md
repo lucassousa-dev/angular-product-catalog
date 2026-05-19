@@ -1,59 +1,92 @@
-# Product2
+# Angular Product Catalog
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+Aplicação web desenvolvida em Angular para cadastro e listagem de produtos, utilizando comunicação HTTP com uma API simulada via JSON Server.
 
-## Development server
+O projeto foi criado para praticar conceitos fundamentais de desenvolvimento front-end com Angular, incluindo componentização, serviços, formulários reativos e integração com uma camada de dados externa.
 
-To start a local development server, run:
+## Funcionalidades
 
-```bash
-ng serve
-```
+- Cadastro de produtos
+- Listagem dinâmica dos produtos cadastrados
+- Comunicação com API simulada
+- Separação de responsabilidades por componentes e serviços
+- Atualização da interface após novas inserções
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Tecnologias utilizadas
 
-## Code scaffolding
+- Angular 20
+- TypeScript
+- HTML
+- CSS
+- RxJS
+- JSON Server
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Estrutura técnica
 
-```bash
-ng generate component component-name
-```
+O projeto foi organizado com foco em separação de responsabilidades:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- `product-component`: interface e lógica de cadastro/listagem
+- `ProductService`: comunicação HTTP com a API
+- `Product`: modelo utilizado para tipagem dos dados
+- `db.json`: base simulada consumida pela aplicação
 
-```bash
-ng generate --help
-```
+## Como executar o projeto
 
-## Building
+### Pré-requisitos
 
-To build the project run:
+- Node.js instalado
+- Angular CLI instalado
+- JSON Server instalado
 
-```bash
-ng build
-```
+### Passos
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+1. Clone o repositório:
 
 ```bash
-ng e2e
+git clone https://github.com/lucassousa-dev/angular-product-catalog.git
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+2. Clone o repositório:
 
-## Additional Resources
+```bash
+cd angular-product-catalog
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. Instale as dependências:
+
+```bash
+npm i
+```
+
+4. Inicie a API simulada:
+
+```bash
+npx json-server --watch db.json --port 3000
+```
+
+5. Execute a aplicação Angular:
+
+```bash
+ng s
+```
+
+6. Acesse no navegador:
+
+```bash
+http://localhost:4200
+```
+
+### Aprendizados aplicados
+
+- Criação e reutilização de componentes em Angular
+- Uso de serviços para centralizar chamadas HTTP
+- Manipulação de formulários reativos
+- Consumo de dados via API simulada
+- Atualização de estado na interface após operações de cadastro
+
+### Possíveis evoluções
+
+- Validação mais completa dos campos
+- Edição e remoção de produtos
+- Feedback visual de carregamento e erro
+- Integração com uma API real
