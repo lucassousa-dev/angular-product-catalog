@@ -46,7 +46,7 @@ O projeto foi organizado com foco em separação de responsabilidades:
 git clone https://github.com/lucassousa-dev/angular-product-catalog.git
 ```
 
-2. Clone o repositório:
+2. Acesse a pasta do projeto::
 
 ```bash
 cd angular-product-catalog
