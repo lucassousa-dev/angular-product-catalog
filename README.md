@@ -76,7 +76,7 @@ ng s
 http://localhost:4200
 ```
 
-### Aprendizados aplicados
+## Aprendizados aplicados
 
 - Criação e reutilização de componentes em Angular
 - Uso de serviços para centralizar chamadas HTTP
@@ -84,7 +84,7 @@ http://localhost:4200
 - Consumo de dados via API simulada
 - Atualização de estado na interface após operações de cadastro
 
-### Possíveis evoluções
+## Possíveis evoluções
 
 - Validação mais completa dos campos
 - Edição e remoção de produtos
